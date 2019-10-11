@@ -72,11 +72,11 @@ class DatasetService:
                     s = ImageService(im)
                     s.reduct(name, 224 * 4)
                     s = ImageService(im)
-                    s.makeRVG(name, 224)
+                    s.makeRGB(name, 224)
                     s = ImageService(im)
-                    s.makeRVG(name, 224 * 2)
+                    s.makeRGB(name, 224 * 2)
                     s = ImageService(im)
-                    s.makeRVG(name, 224 * 4)
+                    s.makeRGB(name, 224 * 4)
 
 class ImageService:
 
@@ -104,7 +104,6 @@ class ImageService:
         out = self.image.transpose(Image.ROTATE_270)
         out.save(f"generate/augment/r270-{name}")
 
-
     @image.setter
     def image(self, value):
         self._image = value
@@ -121,7 +120,7 @@ class ImageService:
         self.image = self.image.resize((size,size))
         self.image.save(f"generate/{size}/crop-circle/{name}")
 
-    def makeRVG(self, name, size=224):
+    def makeRGB(self, name, size=224):
         print(f"Reduct RVG {name} to {size}")
         self.cropCenter(450) #TODO
         ratio = size / self.image.size[0]
@@ -141,7 +140,6 @@ class ImageService:
     def cropCenter(self, size):
         size /= 2
         self.image =  self.image.crop(((self.image.size[0] / 2) - size, (self.image.size[1] / 2) - size, (self.image.size[0] / 2) + size, (self.image.size[1] / 2) + size))
-
 
     def cropCircle(self, r=225):
         for x in range(self.image.size[0]):
@@ -163,18 +161,18 @@ class ImageService:
 if __name__ == '__main__':
     s = DatasetService()
     #s.createDb()
-    with Image.open("generate/gray/mug.jpg") as im:
-        ims = ImageService(im)
-        print(ims.lum)
-        print(ims.std)
-        ims.normalizeLum()
-        ims.image.save("test/im1.jpg")
-        print(ims.lum)
-        ims = ImageService(im)
-        ims.normalize()
-        ims.image.save("test/im2.jpg")
-        print(ims.lum)
-        print(ims.std)
+    # with Image.open("generate/gray/mug.jpg") as im:
+    #     ims = ImageService(im)
+    #     print(ims.lum)
+    #     print(ims.std)
+    #     ims.normalizeLum()
+    #     ims.image.save("test/im1.jpg")
+    #     print(ims.lum)
+    #     ims = ImageService(im)
+    #     ims.normalize()
+    #     ims.image.save("test/im2.jpg")
+    #     print(ims.lum)
+    #     print(ims.std)
 
     s.path = "generate/gray"
     s.augment()
