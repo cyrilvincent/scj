@@ -1,0 +1,21 @@
+{
+    "images": [
+        {
+            "id": 0,
+            "name": "mug.jpg",
+            "h": "07afmEniWKp6T+3HeO6aHV5aBYF8TtvfFOppW90OdR5mb/JvrIHLEcXZeTmlT/LZMfeQzRz9OKWy7efaA3iblg==",
+            "lum": 91.97125325520834,
+            "std": 43.37267882003262
+        },
+        {
+            "id": 0,
+            "name": "ski.jpg",
+            "h": "/UF80rOXEgjcksVJwAXi6adRkgYQN1xhfOkCKWgtc3K6r0aTcLSDIyaPiDWUWl77b/sKgyJrrlzYJUQqaiLkvw==",
+            "lum": 112.827002,
+            "std": 84.01544988289552
+        }
+    ],
+    "count": 2,
+    "lum": 102.39912762760417,
+    "std": 63.69406435146407
+}
