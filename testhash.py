@@ -142,5 +142,17 @@ with open("db.json", "w") as f:
 #https://www.rsipvision.com/wafer-macro-defects-detection-classification/
 #https://www.mdpi.com/2076-3417/9/3/597/htm
 
+#https://blog.octo.com/classification-dimages-les-reseaux-de-neurones-convolutifs-en-toute-simplicite/
+#http://www.datacorner.fr/xgboost/
+#http://cs231n.github.io/transfer-learning/
+#https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
+
+#Code de Francois Chollet
+#Little CNN avec 2 categories : https://gist.github.com/fchollet/0830affa1f7f19fd47b06d4cf89ed44d
+#BottleNeeck strategie
+#VGG16 + Petit Dense https://gist.github.com/fchollet/0830affa1f7f19fd47b06d4cf89ed44d
+#Fine Tuning SDG + LR + Momentum
+#https://gist.github.com/fchollet/7eb39b44eb9e16e59632d25fb3119975
+
 
 
