@@ -11,6 +11,10 @@ import csv
 class DatasetService:
 
     vgg16cnnmodel = None
+    mobilenet2model = None
+    nasnetmodel = None
+    nasnetmobilemodel = None
+    inceptionresnet2model = None
 
     def __init__(self, path = "img"):
         self.path = path
@@ -91,16 +95,56 @@ class DatasetService:
     def vgg16cnn(self):
         if DatasetService.vgg16cnnmodel is None:
             DatasetService.vgg16cnnmodel = keras.applications.vgg16.VGG16(include_top=False, weights="imagenet")
+            DatasetService.vgg16cnnmodel.summary()
+        db = self.makecsvdb(224, ImageService.vgg16cnn)
+        self.makecsv(db, "vgg16flatten.csv")
+
+    def mobilenet2cnn(self):
+        if DatasetService.mobilenet2model is None:
+            model = keras.applications.mobilenet_v2.MobileNetV2(include_top=True, weights="imagenet")
+            DatasetService.mobilenet2model = keras.models.Model(model.input, model.layers[-2].output)
+            DatasetService.mobilenet2model.summary()
+        db = self.makecsvdb(224, ImageService.mobilenet2cnn)
+        self.makecsv(db, "mobilenet2flatten.csv")
+
+    def nasnetcnn(self):
+        if DatasetService.nasnetmodel is None:
+            model = keras.applications.nasnet.NASNetLarge(include_top=True, weights="imagenet")
+            DatasetService.nasnetmodel = keras.models.Model(model.input, model.layers[-2].output)
+            DatasetService.nasnetmodel.summary()
+        db = self.makecsvdb(331, ImageService.nasnetcnn)
+        self.makecsv(db, "nasnetflatten.csv")
+
+    def nasnetmobilecnn(self):
+        if DatasetService.nasnetmobilemodel is None:
+            model = keras.applications.nasnet.NASNetMobile(include_top=True, weights="imagenet")
+            DatasetService.nasnetmobilemodel = keras.models.Model(model.input, model.layers[-2].output)
+            DatasetService.nasnetmobilemodel.summary()
+        db = self.makecsvdb(224,ImageService.nasnetmobilecnn)
+        self.makecsv(db, "nasnetmobileflatten.csv")
+
+    def inceptionresnet2cnn(self):
+        if DatasetService.inceptionresnet2model is None:
+            model = keras.applications.inception_resnet_v2.InceptionResNetV2(include_top=True, weights="imagenet")
+            DatasetService.inceptionresnet2model = keras.models.Model(model.input, model.layers[-2].output)
+            DatasetService.inceptionresnet2model.summary()
+        db = self.makecsvdb(299, ImageService.inceptionresnet2cnn)
+        self.makecsv(db, "inceptionresnet2flatten.csv")
+
+    def makecsvdb(self, size, cb):
         l = self.listimages()
         db = []
         for name in l:
             uri = f"{self.path}/{name}"
-            im = keras.preprocessing.image.load_img(f'{uri}', target_size=(224, 224))
+            im = keras.preprocessing.image.load_img(f'{uri}', target_size=(size, size))
             s = ImageService(im)
-            res = s.vgg16cnn()
+            res = cb(s)
             db.append([i.item() for i in res])
             db[-1].insert(0, name)
-        with open(f"{self.path}/vgg16flatten.csv", "w", newline='') as f:
+        return db
+
+    def makecsv(self, db, file):
+        with open(f"{self.path}/{file}", "w", newline='') as f:
             writer = csv.writer(f)
             for row in db:
                 writer.writerow(row)
@@ -194,8 +238,7 @@ class ImageService:
         self.image = self.image.point(lambda i : 255 - i)
 
     def vgg16cnn(self):
-        image = keras.preprocessing.image.img_to_array(self.image)
-        image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+        image = self.preprocess()
         image = keras.applications.vgg16.preprocess_input(image)
         out = DatasetService.vgg16cnnmodel.predict(image)
         flatten = []
@@ -204,6 +247,40 @@ class ImageService:
                 for k in range(512):
                     flatten.append(out[0][i][j][k])
         return flatten
+
+    def mobilenet2cnn(self):
+        image = self.preprocess()
+        image = keras.applications.mobilenet_v2.preprocess_input(image)
+        out = DatasetService.mobilenet2model.predict(image)
+        return self.flatten(out)
+
+    def nasnetcnn(self):
+        image = self.preprocess()
+        image = keras.applications.nasnet.preprocess_input(image)
+        out = DatasetService.nasnetmodel.predict(image)
+        return self.flatten(out)
+
+    def nasnetmobilecnn(self):
+        image = self.preprocess()
+        image = keras.applications.nasnet.preprocess_input(image)
+        out = DatasetService.nasnetmobilemodel.predict(image)
+        return self.flatten(out)
+
+    def inceptionresnet2cnn(self):
+        image = self.preprocess()
+        image = keras.applications.inception_resnet_v2.preprocess_input(image)
+        out = DatasetService.inceptionresnet2model.predict(image)
+        return self.flatten(out)
+
+    def preprocess(self):
+        image = keras.preprocessing.image.img_to_array(self.image)
+        return image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+
+    def flatten(self, out):
+        l = []
+        for i in range(out.shape[1]):
+            l.append(out[0][i])
+        return l
 
     def mosaic(self, path, name, dim=224, stride = 0.5):
         for i in range(self.image.size[0] // int(dim * stride) - 1):
@@ -233,14 +310,18 @@ if __name__ == '__main__':
     #     print(ims.lum)
     #     print(ims.std)
 
-    s.path = "generate/gray"
-    s.mosaic()
+    # s.path = "generate/gray"
+    # s.mosaic()
     # s.augment()
     # s.path = "generate/augment"
     # s.createDb()
     # s.reduct()
     #s.path = "generate/224/crop-circle"
     #s.vgg16cnn()
-
+    s.path = "generate/224/crop-circle"
+    #s.mobilenet2cnn()
+    #s.nasnetcnn()
+    s.nasnetmobilecnn()
+    s.inceptionresnet2cnn()
 
 

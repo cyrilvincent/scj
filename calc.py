@@ -198,6 +198,13 @@ print(f"Nb kweigths={int(calcNbW([32,64],[256],10,j,3,1)/1000)}")
 print(f"Nb Miter={int(calcNbIter([32,64],[256],10,j,3,1)/1000000)}")
 d = calcNbDays(calcNbIter([32,64],[256],10,j,3,1), 4000)
 print(f"Nb days={d:.1f} GPU={d / calcGpuRatio(j,9000):.1f}")
+j = resdefaultmin
+print(f"CVCTDK{1+2+1}-MLP-{(j**2)*1}I-1H-10O") # Concat layers not flatten
+print(f"{j}*{j}*1|{(j**2)*1}|128|{nbcat}")
+print(f"Nb kweigths={int(calcNbW([],[128],10,(j**2)*1)/1000)}")
+print(f"Nb Miter={int(calcNbIter([],[128],10,(j**2)*1)/1000000)}")
+d = calcNbDays(calcNbIter([],[128],10,(j**2)*1), 4000)
+print(f"Nb days={d:.1f} GPU={d / calcGpuRatio(j,(j**2)*2):.1f}")
 
 print("From scratch strategy alternative with MobileNetV2 like")
 print("Replace Flatten by GlobaleAveragePool 7x7 to obtain 1280 outputs")
@@ -246,6 +253,15 @@ print(f"Nb kweigths={int(calcNbW([32],[256],10,j,4,1)/1000)}")
 print(f"Nb Miter={int(calcNbIter([32],[256],10,j,4,1)/1000000)}")
 d = calcNbDays(calcNbIter([32],[256],10,j,4,1), 4000 * 16)
 print(f"Nb days={d:.1f} GPU={d / calcGpuRatio(j,5000):.1f}")
+j = resdefaultmin
+print(f"CVCTDK{1+2+1}-MLP-{(j**2)*1}I-1H-10O") # Concat layers not flatten
+print(f"{j}*{j}*1|{(j**2)*1}|128|{nbcat}")
+print(f"Nb kweigths={int(calcNbW([],[128],10,(j**2)*1)/1000)}")
+print(f"Nb Miter={int(calcNbIter([],[128],10,(j**2)*1)/1000000)}")
+d = calcNbDays(calcNbIter([],[128],10,(j**2)*1), 4000)
+print(f"Nb days={d:.1f} GPU={d / calcGpuRatio(j,(j**2)*2):.1f}")
+
+
 
 print()
 print("For info VGG16")
