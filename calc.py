@@ -71,7 +71,7 @@ def calcNbIter(depths = [32], hiddens = [512], out = 10, input = 224, drop = 2, 
     res += out * prev
     return int(res)
 
-def calcNbDays(nbiter, nbsample, epochs=200, freq=3.7, nbcycle=10):
+def calcNbDays(nbiter, nbsample, epochs=100, freq=3.7, nbcycle=10):
     return (nbiter * nbsample * epochs / (freq * 1e9 / nbcycle)) / (24 * 3600)
 
 def calcGpuRatio(dimcnn = 224, dimmlp = 25088, nbcore = 2048):
@@ -142,12 +142,12 @@ print("Alternative with NasNetMobile(771)")
 print("Alternative with MobileNet_V2(157) but input 112x112")
 
 def calcInputSizeBottleneck(res, nbBottleneck, drop = 2):
-    return int(resdefaultmin / drop ** nbBottleneck) * drop ** nbBottleneck
+    return (int(resdefaultmin / drop ** nbBottleneck) + 1) * drop ** nbBottleneck
 
 inputcnn4bottleneck = calcInputSizeBottleneck(resdefaultmin, 4, 2)
 j = inputcnn4bottleneck
 print()
-print("From scratch strategy")
+print("Full strategy")
 print(f"CVCTDK{1+4*2+1+3+1}-CNN-{j}x2I-4BN-2H-10O")
 j = min(j, calcInputSizeBottleneck(resdefaultmin, 3, 2))
 print(f"    {j}*{j}*2|{j}*{j}*32|{int(j/2)}*{int(j/2)}*64|{int(j/4)}*{int(j/4)}*128|{int(j/8)}*{int(j/8)}*256|{int(j/16)}*{int(j/16)}*256|{int((j/16)**2*256)}|4096|1024|{nbcat}")

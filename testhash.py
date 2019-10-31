@@ -49,7 +49,8 @@ for e in l:
             out.save(f"img/crop/r90-{e}")
             out = region.transpose(Image.ROTATE_180)
             out.save(f"img/crop/r180-{e}")
-            out = region.transpose(Image.ROTATE_270)
+            out = region.transpose(Image.ROTATE_270) # On peut ajouter TRANSPOSE (diag) TRANSVERSE (oppositediag) FLIP+ROTATE
+            # TRANSPOSE ET TRANSERVE ne servent à rien : https://github.com/python-pillow/Pillow/blob/master/Tests/test_image_transpose.py
             out.save(f"img/crop/r270-{e}")
             ie = ImageEnhance.Contrast(region)
             out = ie.enhance(1.3)

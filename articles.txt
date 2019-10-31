@@ -1,0 +1,54 @@
+Article de Francois Chollet
+Important
+https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
+Little CNN avec 2 categories
+https://gist.github.com/fchollet/0830affa1f7f19fd47b06d4cf89ed44d
+    Important explique que si 2 categories on peut faire une seule sortie avec une activation sigmoid
+    Un bel exemple de checkpoint dans les commentaires
+VGG16 + Transfert
+https://gist.github.com/fchollet/f35fbc80e066a49d65f1688a7e99f069
+Fine Tuning SDG + LR + Momentum
+https://gist.github.com/fchollet/7eb39b44eb9e16e59632d25fb3119975
+CIFAR10
+https://keras.io/examples/cifar10_cnn/
+
+Transfert Learning
+https://www.guru99.com/keras-tutorial.html
+https://blog.octo.com/classification-dimages-les-reseaux-de-neurones-convolutifs-en-toute-simplicite/
+#A relire : http://cs231n.github.io/transfer-learning/
+#A relire : http://blog.kaggle.com/2015/08/10/detecting-diabetic-retinopathy-in-eye-images/
+
+Semi conductor
+https://www.rsipvision.com/wafer-macro-defects-detection-classification/
+    Important
+    4 BT 300->150->75->37->43K->Denses
+    15 cat
+    2 phases : detecte d'abord si ko puis classifie le défaut
+#A relire attentivement https://www.mdpi.com/2076-3417/9/3/597/htm
+Important: http://www.jommpublish.org/p/21/
+    Important car fixe epochs à 50 (10 pour batch=1) pour les 1er résultats, 100 ok, 200 pour un fine tuning pour un dataset de 400 à 5500
+    Un batch à 20
+    Un lr à 0.01, 0.001 en fine tuning
+        if epoch > 180:
+            lr *= 0.5e-3
+        elif epoch > 160:
+            lr *= 1e-3
+        elif epoch > 120:
+            lr *= 1e-2
+        elif epoch > 80:
+            lr *= 1e-1
+    Categorical_crossentropy
+    En premier jet faire une batch = 1, epochs = 10, lr = 0.01, 1 cat + sigmoid
+    Puis batch = 20,epochs = 50, lr = 0.005, cce, 10 cats
+    Puis batch = 20,epochs = 50, lr = 0.005, cce+w, 10 cats
+    Puis finetuning batch = 20, epochs = 500, early_stopping, lr=0.0005, cce+w, sgd+momentum+l1+l2
+Inspiration: https://www.kaggle.com/kcs93023/keras-wafer-classification-cnn2d-with-augmentation
+    Injecter des metadata comme le placement des die à la fin du CNN
+    https://stackoverflow.com/questions/43196636/how-to-concatenate-two-layers-in-keras
+https://www.kaggle.com/ashishpatel26/wm-811k-wafermap
+NEW https://github.com/Yfyangd/Wafer_Defect_Detection
+
+ML
+http://www.datacorner.fr/xgboost/
+
+
