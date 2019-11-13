@@ -1,14 +1,7 @@
 1px = 12.5µ
 Champs = 22mm x 22mm = 484mm²
-Taille = 5MPx = 2236px * 2236px (non confirmé)
-J'en déduit 22000µ / 2236 = 10µ ?
-28 die/wafer
-dataset = 800 ok, 200 ko = 1000 => 4000 avec augmentation
 1 défaut centre = 75µ = 6px
 1 défaut périphérie = 150µ = 12px
-Elimination des bords : 2236-10% = 2012px (à confirmer)
-Résolution minimale défaut centre = (2012*0.5)/6 = 168px à confirmer
-Résolution minimale défaut périphérie = 2012/12 = 168px à confirmer
 vgg16 = 224 * 12 / 2012 = 1.3px/défaut périphérique
 resnet = 299 * 12 / 2012 = 1.7px/défaut périphérique
 cifar = 28 * 12 / 2012 = 0.17px/défaut soit 882µ le défaut détectable : pas acceptable
@@ -44,17 +37,3 @@ vgg16+CIFAR-MLP
 25088|3136|512|10
 vgg16+CholletSmall-MLP
 25088|512|10
-
-Mosaic strategy
-NbMosaic Cifar10 = 2012 / 28 = 71 (too much)
-NbMosaic Cifar10 1px/default = (22012 / 6) / 23 = 12 =stride=> 23 * 23 = 529 images avec un dataset de 244 images impossible à faire
-NbMosaic VGG16 = 2012 / 224 = 9 =stride=> 18*18 = 324 images  avec un dataset de 81 images (difficile)
-NbMosaic optimum = 4 soit un dataset de 16 images =stride=> 7x7 = 49 images, soit = 2012 / 4 = 503px résolution de 503/224 * 12 = 29µ
-Taille minimale possible 75µ/29µ = 2.5 soit 224/2.5 soit 90px
-CNN possible
-Les VGG16 puis
-96x96x1|96x96x32|48x48x64|24x24x64|36864|512|10
-96x96x1|96x96x32|48x48x64|16x16x64|16384|512|10
-99x99x1|99x99x32|33x33x64|11x11x64|7744|512|10
-
-

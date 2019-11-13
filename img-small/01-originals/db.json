@@ -9,6 +9,8 @@
     "format": "BMP",
     "lum": -1,
     "std": -1,
+    "lummin": -1,
+    "lummax": -1,
     "count": 26,
     "dies": [
         {

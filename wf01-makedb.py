@@ -6,11 +6,13 @@ import csv
 import hashlib
 import base64
 
+print("Data worflow step 1: Make database")
+print("==================================")
 path = f"{config.path}-small/01-originals"
 path = f"{config.path}/01-originals"
 print(f"Scan {path}")
 diesdb =[]
-db = {"size":(2500,2000), "name":"01-originals", "path":path, "mode":"L", "format":"BMP", "lum":-1,"std":-1 }
+db = {"size":(2500,2000), "name":"01-originals", "path":path, "mode":"L", "format":"BMP", "lum":-1,"std":-1,"lummin":-1,"lummax":-1 }
 id = 0
 regex = r"-(\d\d)-(\d\d).bmp$"
 lots = [lot for lot in os.listdir(path) if os.path.isdir(f"{path}/{lot}")]
