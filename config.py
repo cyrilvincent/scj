@@ -1,5 +1,5 @@
 precision = 11 #µm/px
-radiusGlobal = 1008 #px
+radiusGlobal = 1008 - 30 #px
 radius = 875 #px
 radiusCenter = 261 #px
 dimDefect = 150 #µm

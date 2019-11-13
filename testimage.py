@@ -1,5 +1,6 @@
 from PIL import Image, ImageStat, ImageEnhance
 import numpy as np
+import math
 
 radius = 875
 
@@ -99,3 +100,11 @@ stdmax = 21.42
 print(127 / stdmean, 127/stdmax)
 stdtestboucle = 4
 # Tester avec 4, 6 et 10
+
+radius = 990
+for x in range(im.size[0]):
+    for y in range(im.size[1]):
+        d = math.sqrt(((x - (im.size[0] / 2)) ** 2) + ((y - (im.size[1] / 2)) ** 2))
+        if d > radius:
+            im.putpixel((x, y), (0))
+im.show()

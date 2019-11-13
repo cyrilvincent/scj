@@ -11,6 +11,7 @@ path = f"{config.path}/02-crop"
 outpath = f"{config.path}-small/03-split"
 outpath = f"{config.path}/03-split"
 
+# Only for small
 # config.datasetSize = 26
 # config.datasetTestSize = 5
 # config.datasetTrainSize = 21
@@ -28,15 +29,15 @@ print(f"Split {config.datasetSize} => {config.datasetTrainSize} + {config.datase
 tests = np.arange(config.datasetSize)
 np.random.shuffle(tests)
 tests = tests[:config.datasetTestSize]
-print("Copy files")
-for die in db["dies"]:
-    if die["id"] in tests:
-        shutil.copy2(die["path"], outpath + "/test")
-    else:
-        shutil.copy2(die["path"], outpath + "/train")
-    sys.stdout.write(".")
-    sys.stdout.flush()
-print()
+# print("Copy files")
+# for die in db["dies"]:
+#     if die["id"] in tests:
+#         shutil.copy2(die["path"], outpath + "/test")
+#     else:
+#         shutil.copy2(die["path"], outpath + "/train")
+#     sys.stdout.write(".")
+#     sys.stdout.flush()
+# print()
 print(f"Create db.json")
 with open(f"{path}/db.json", "w") as f:
     f.write(json.dumps(db, indent=4))

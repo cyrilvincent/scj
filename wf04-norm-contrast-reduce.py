@@ -10,14 +10,14 @@ path = f"{config.path}/03-split"
 outpath = f"{config.path}-small/04-norm"
 outpath = f"{config.path}/04-norm"
 
-def transform(s="train", contrast = 1, size = 224, method = Image.LANCZOS):
+def transform(s="train", contrast = 1, size = 224, method = Image.LANCZOS, center=False):
     print(f"Open {s}/db.json")
     db = None
     with open(f"{path}/{s}/db.json", "r") as f:
         db = json.loads(f.read())
     print(db)
-    db["name"] = f"04-norm-c{contrast}-{size}-{s}"
-    db["path"] = f"{outpath}/c{contrast}-{size}/{s}"
+    db["name"] = f"04-center-c{contrast}-{size}-{s}" if center else f"04-norm-c{contrast}-{size}-{s}"
+    db["path"] = f"{outpath}/center-c{contrast}-{size}/{s}" if center else f"{outpath}/c{contrast}-{size}/{s}"
     db["size"] = size
     for die in db["dies"]:
         im = Image.open(die["path"])
@@ -32,10 +32,13 @@ def transform(s="train", contrast = 1, size = 224, method = Image.LANCZOS):
         die["std"] = round(stat.stddev[0],2)
         die["lummin"] = stat.extrema[0][0]
         die["lummax"] = stat.extrema[0][1]
+        if center:
+            radius = config.radiusCenter
+            norm = norm.crop(((norm.size[0] / 2) - radius, (norm.size[1] / 2) - radius, (norm.size[0] / 2) + radius, (norm.size[1] / 2) + radius))
         red = norm.resize((size,size),method)
-        file = f"{db['path']}/{die['die']}-norm-c{contrast}-{size}.bmp"
-        print(f"Creating {file}")
-        red.save(file)
+        die["path"] = f"{db['path']}/{die['die']}-norm-c{contrast}-{size}.bmp"
+        print(f"Creating {die['path']}")
+        red.save(die['path'])
 
         radius = 400
         im0 = im.crop(((im.size[0] / 2) - radius, (im.size[1] / 2) - radius, (im.size[0] / 2) + radius, (im.size[1] / 2) + radius))
@@ -56,11 +59,13 @@ def transform(s="train", contrast = 1, size = 224, method = Image.LANCZOS):
     with open(f"{db['path']}/db.json", "w") as f:
         f.write(json.dumps(db, indent=4))
 
-transform("test",1,224)
-transform("train",1,224)
-transform("test",4,224)
-transform("train",4,224)
-transform("test",6,224)
-transform("train",6,224)
-transform("test",10,224)
-transform("train",10,224)
+# transform("test",1,224)
+# transform("train",1,224)
+# transform("test",4,224)
+# transform("train",4,224)
+# transform("test",6,224)
+# transform("train",6,224)
+# transform("test",10,224)
+# transform("train",10,224)
+transform("test",4,224,center=True)
+transform("train",4,224,center=True)
