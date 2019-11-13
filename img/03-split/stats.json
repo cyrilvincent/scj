@@ -1,0 +1,30 @@
+{
+    "lum": {
+        "mean": 132.05,
+        "std": 9.76,
+        "min": 104,
+        "max": 153,
+        "deltastd": 2.79
+    },
+    "std": {
+        "mean": 11.65,
+        "std": 2.17,
+        "min": 8.34,
+        "max": 21.42,
+        "deltastd": 4.5
+    },
+    "lummin": {
+        "mean": 85.81,
+        "std": 28.4,
+        "min": 0,
+        "max": 120,
+        "deltastd": 3.02
+    },
+    "lummax": {
+        "mean": 195.35,
+        "std": 10.0,
+        "min": 163,
+        "max": 219,
+        "deltastd": 3.24
+    }
+}
