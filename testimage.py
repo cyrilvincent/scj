@@ -1,4 +1,4 @@
-from PIL import Image, ImageStat, ImageEnhance
+from PIL import Image, ImageStat, ImageEnhance, ImageFilter
 import numpy as np
 import math
 
@@ -57,6 +57,9 @@ nb0px = len([p for p in pxs if p == 0]) #4:458 5:9403 6:33295
 print(lum, std, min2, max2, nb0px)
 #c10.show()
 
+ie = ImageEnhance.Contrast(norm)
+c4 = ie.enhance(4)
+
 radius = 400
 im2 =  im.crop(((im.size[0] / 2) - radius, (im.size[1] / 2) - radius, (im.size[0] / 2) + radius, (im.size[1] / 2) + radius))
 im2 = im2.resize((100,100), Image.LANCZOS) # super
@@ -107,4 +110,4 @@ for x in range(im.size[0]):
         d = math.sqrt(((x - (im.size[0] / 2)) ** 2) + ((y - (im.size[1] / 2)) ** 2))
         if d > radius:
             im.putpixel((x, y), (0))
-im.show()
+#c4.show()

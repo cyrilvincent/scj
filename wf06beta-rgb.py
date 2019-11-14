@@ -47,7 +47,7 @@ def transform(s="train", inv = True):
         if inv:
             im = im.point(lambda x : 255- x)
         ccrop(im)
-        die["path"] = die["path"].replace("04-norm","06-rvg").replace("-norm-","-rvg-")
+        die["path"] = die["path"].replace("/04-norm","/06-rvg").replace("-norm-","-rvg-")
         print(f"Creating {die['path']}")
         im.save(die["path"])
 

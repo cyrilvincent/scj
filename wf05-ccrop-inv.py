@@ -21,7 +21,6 @@ def ccrop(im, radius = config.radiusGlobal):
 
 def transform(s="train", inv = True):
     print(f"Open {s}/db.json")
-    db = None
     with open(f"{path}/{s}/db.json", "r") as f:
         db = json.loads(f.read())
     print(db)
@@ -32,7 +31,7 @@ def transform(s="train", inv = True):
         if inv:
             im = im.point(lambda x : 255- x)
         ccrop(im)
-        die["path"] = die["path"].replace("04-norm","05-ccrop").replace("-norm-","-ccrop-")
+        die["path"] = die["path"].replace("/04-norm","/05-ccrop").replace("-norm-","-ccrop-")
         print(f"Creating {die['path']}")
         im.save(die["path"])
 

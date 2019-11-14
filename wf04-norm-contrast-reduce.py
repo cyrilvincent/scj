@@ -36,7 +36,7 @@ def transform(s="train", contrast = 1, size = 224, method = Image.LANCZOS, cente
             radius = config.radiusCenter
             norm = norm.crop(((norm.size[0] / 2) - radius, (norm.size[1] / 2) - radius, (norm.size[0] / 2) + radius, (norm.size[1] / 2) + radius))
         red = norm.resize((size,size),method)
-        die["path"] = f"{db['path']}/{die['die']}-norm-c{contrast}-{size}.bmp"
+        die["path"] = f"{db['path']}/die{die['id']}-{die['die']}-norm-c{contrast}-{size}.bmp"
         print(f"Creating {die['path']}")
         red.save(die['path'])
 
@@ -59,13 +59,13 @@ def transform(s="train", contrast = 1, size = 224, method = Image.LANCZOS, cente
     with open(f"{db['path']}/db.json", "w") as f:
         f.write(json.dumps(db, indent=4))
 
-# transform("test",1,224)
-# transform("train",1,224)
-# transform("test",4,224)
-# transform("train",4,224)
-# transform("test",6,224)
-# transform("train",6,224)
-# transform("test",10,224)
-# transform("train",10,224)
+transform("test",1,224)
+transform("train",1,224)
+transform("test",4,224)
+transform("train",4,224)
+transform("test",6,224)
+transform("train",6,224)
+transform("test",10,224)
+transform("train",10,224)
 transform("test",4,224,center=True)
 transform("train",4,224,center=True)
