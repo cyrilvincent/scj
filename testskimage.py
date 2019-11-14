@@ -7,8 +7,9 @@ import numpy as np
 from PIL import Image, ImageStat
 
 path = "tests/img/die-0-OSD185236-Brutes-01-01-crop.bmp"
-#path = "tests/img/die0-OSD185236-Brutes-01-01-norm-c4-224.bmp"
+path = "tests/img/OSD185247-Brutes-07-05.bmp"
 outpath = "tests/img/OSD185236-Brutes-01-01-sato.png"
+outpath = "tests/img/OSD185247-Brutes-07-05-sato.png"
 # pim = Image.open(path)
 # im = pim.getdata()
 im = skimage.io.imread(path,as_gray=True)

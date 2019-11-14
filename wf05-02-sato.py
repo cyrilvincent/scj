@@ -10,9 +10,9 @@ import os
 print("Data worflow step 5.2: Sato")
 print("===========================")
 path = f"{config.path}-small/03-split"
-#path = f"{config.path}/03-split"
+path = f"{config.path}/03-split"
 outpath = f"{config.path}-small/05-ccrop/sato-224"
-#outpath = f"{config.path}/05-ccrop/sato-224"
+outpath = f"{config.path}/05-ccrop/sato-224"
 
 def ccrop(im, radius = config.radiusGlobal):
     radius = radius * im.size[0] * 0.5 / config.radius
