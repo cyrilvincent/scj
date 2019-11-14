@@ -7,6 +7,7 @@ radius = 875
 path = "tests/img/OSD185236-Analysees-01-01.jpg"
 path = "tests/img/OSD185236-Brutes-01-01.bmp"
 im = Image.open(path)
+print(im.mode)
 #im.show()
 
 im =  im.crop(((im.size[0] / 2) - radius, (im.size[1] / 2) - radius, (im.size[0] / 2) + radius, (im.size[1] / 2) + radius))
