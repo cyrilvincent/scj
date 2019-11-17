@@ -10,7 +10,7 @@ import os
 print("Detect by stats")
 print("===============")
 path = f"{config.path}/05-ccrop/sato-224/test/db.json"
-#path = f"{config.path}/05-ccrop/sato-224/train/db.json"
+path = f"{config.path}/05-ccrop/sato-224/train/db.json"
 
 stats = {
     "lum": {
@@ -60,5 +60,17 @@ lumminlow = [d["id"] for d in db["dies"] if d["lummin"] == 0]
 print(f"Lummin-: {lumminlow}")
 lummaxhigh = [d["id"] for d in db["dies"] if d["lummax"] > 219 * 0.98]
 print(f"Lummax+: {lummaxhigh}")
-satohigh = [d["id"] for d in db["dies"] if d["sato52"] > 15] #ou 16
+satohigh = [d["id"] for d in db["dies"] if d["sato52"] > 4] # 16 est significatif à partir de 4
 print(f"Sato+: {satohigh}")
+harrishigh = [d["id"] for d in db["dies"] if d["harris"] > 2]
+print(f"Harris+: {harrishigh}")
+borders = {1:0.2,4:0.1,5:0.2,10:0.4,17:0.1,22:0.4,23:0.1,26:0.1}
+risks = {}
+for d in db["dies"]:
+    risk = max(0, (3 - d["wafer"]) / 10)
+    if d["y"] in borders:
+        risk += borders[d["y"]]
+    if risk > 0:
+        risks[d["id"]] = round(risk,1)
+print("Position risks:",risks)
+

@@ -6,10 +6,10 @@ from PIL import Image
 
 print("Data worflow step 7: Rotation")
 print("=========================================")
-path = f"{config.path}-small/05-ccrop/c4-224"
-path = f"{config.path}/05-ccrop/c4-224"
-outpath = f"{config.path}-small/07-rotate/c4-224"
-outpath = f"{config.path}/07-rotate/c4-224"
+path = f"{config.path}-small/05-ccrop/c6-224"
+path = f"{config.path}/05-ccrop/c6-224"
+outpath = f"{config.path}-small/07-rotate/c6-224"
+outpath = f"{config.path}/07-rotate/c6-224"
 
 def rotate(die,db,im,angle,flip=False):
     rdie = dict(die)

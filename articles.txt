@@ -56,3 +56,4 @@ Metal Defects : https://github.com/maxkferg/metal-defect-detection
 IMPORTANT Scikit-image : https://scikit-image.org/docs/dev/api/skimage.filters.html
     Notament le gabor
 
+https://github.com/fo40225/tensorflow-windows-wheel

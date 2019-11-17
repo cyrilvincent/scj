@@ -8,9 +8,9 @@ print("Data worflow step 6 BETA: RGB")
 print("=============================")
 path = f"{config.path}-small/04-norm"
 #path = f"{config.path}/04-norm/c4-224"
-rpath = "c4-224"
+rpath = "c6-224"
 gpath = "c10-224"
-bpath = "center-c4-224"
+bpath = "center-c6-224"
 outpath = f"{config.path}-small/06-rvg"
 #outpath = f"{config.path}/06-rvg"
 

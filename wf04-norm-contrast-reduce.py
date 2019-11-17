@@ -27,11 +27,11 @@ def transform(s="train", contrast = 1, size = 224, method = Image.LANCZOS, cente
         if contrast != 1:
             ie = ImageEnhance.Contrast(norm)
             norm = ie.enhance(contrast)
-        stat = ImageStat.Stat(norm)
-        die["lum"] = round(stat.mean[0],2)
-        die["std"] = round(stat.stddev[0],2)
-        die["lummin"] = stat.extrema[0][0]
-        die["lummax"] = stat.extrema[0][1]
+        # stat = ImageStat.Stat(norm)
+        # die["lum"] = round(stat.mean[0],2)
+        # die["std"] = round(stat.stddev[0],2)
+        # die["lummin"] = stat.extrema[0][0]
+        # die["lummax"] = stat.extrema[0][1]
         if center:
             radius = config.radiusCenter
             norm = norm.crop(((norm.size[0] / 2) - radius, (norm.size[1] / 2) - radius, (norm.size[0] / 2) + radius, (norm.size[1] / 2) + radius))
@@ -41,31 +41,33 @@ def transform(s="train", contrast = 1, size = 224, method = Image.LANCZOS, cente
         red.save(die['path'])
 
         radius = 400
-        im0 = im.crop(((im.size[0] / 2) - radius, (im.size[1] / 2) - radius, (im.size[0] / 2) + radius, (im.size[1] / 2) + radius))
-        im0 = im0.resize((100, 100), Image.LANCZOS)
-        ie = ImageEnhance.Contrast(im0)
-        im0 = ie.enhance(40)
-        pxs = list(im0.getdata())
-        nb0px = len([p for p in pxs if p == 0])
-        die["zpc40"] = nb0px
+        # im0 = im.crop(((im.size[0] / 2) - radius, (im.size[1] / 2) - radius, (im.size[0] / 2) + radius, (im.size[1] / 2) + radius))
+        # im0 = im0.resize((100, 100), Image.LANCZOS)
+        # ie = ImageEnhance.Contrast(im0)
+        # im0 = ie.enhance(40)
+        # pxs = list(im0.getdata())
+        # nb0px = len([p for p in pxs if p == 0])
+        # die["zpc40"] = nb0px
 
-    db["lum"] = round(sum([d["lum"] for d in db["dies"]]) / len(db["dies"]), 2)
-    db["std"] = round(sum([d["std"] for d in db["dies"]]) / len(db["dies"]), 2)
-    db["lummin"] = round(sum([d["lummin"] for d in db["dies"]]) / len(db["dies"]), 2)
-    db["lummax"] = round(sum([d["lummax"] for d in db["dies"]]) / len(db["dies"]), 2)
-    db["zpc40"] = int(sum([d["zpc40"] for d in db["dies"]]) / len(db["dies"]))
+    # db["lum"] = round(sum([d["lum"] for d in db["dies"]]) / len(db["dies"]), 2)
+    # db["std"] = round(sum([d["std"] for d in db["dies"]]) / len(db["dies"]), 2)
+    # db["lummin"] = round(sum([d["lummin"] for d in db["dies"]]) / len(db["dies"]), 2)
+    # db["lummax"] = round(sum([d["lummax"] for d in db["dies"]]) / len(db["dies"]), 2)
+    # db["zpc40"] = int(sum([d["zpc40"] for d in db["dies"]]) / len(db["dies"]))
 
     print(f"Create {db['path']}/db.json")
     with open(f"{db['path']}/db.json", "w") as f:
         f.write(json.dumps(db, indent=4))
 
-transform("test",1,224)
-transform("train",1,224)
+# transform("test",1,224)
+# transform("train",1,224)
 transform("test",4,224)
 transform("train",4,224)
-transform("test",6,224)
-transform("train",6,224)
-transform("test",10,224)
-transform("train",10,224)
-transform("test",4,224,center=True)
-transform("train",4,224,center=True)
+# transform("test",6,224)
+# transform("train",6,224)
+# transform("test",10,224)
+# transform("train",10,224)
+# transform("test",6,224,center=True)
+# transform("train",6,224,center=True)
+# transform("test",6,28)
+# transform("train",6,28)

@@ -1,6 +1,5 @@
 import config
 import json
-import numpy as np
 import math
 from PIL import Image
 

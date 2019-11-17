@@ -5,7 +5,7 @@ import numpy as np
 print("Data worflow step 2.2: Lum stats")
 print("================================")
 path = f"{config.path}-small/02-crop"
-path = f"{config.path}/02-crop"
+#path = f"{config.path}/02-crop"
 print("Open db.json")
 db = None
 with open(f"{path}/db.json", "r") as f:
@@ -25,6 +25,7 @@ db["std"]["std"] = round(float(np.std(stds)), 2)
 db["std"]["min"] = float(np.min(stds))
 db["std"]["max"] = float(np.max(stds))
 db["std"]["deltastd"] = round(float(max(np.max(stds) - np.mean(stds), np.mean(stds) - np.min(stds)) / np.std(stds)), 2)
+db["std"]["deltamax127"] = round(127 / np.max(stds), 2)
 db["lummin"]["mean"] = round(float(np.mean(lummins)), 2)
 db["lummin"]["std"] = round(float(np.std(lummins)), 2)
 db["lummin"]["min"] = int(np.min(lummins))
@@ -37,7 +38,7 @@ db["lummax"]["max"] = int(np.max(lummaxs))
 db["lummax"]["deltastd"] = round(float(max(np.max(lummaxs) - np.mean(lummaxs), np.mean(lummaxs) - np.min(lummaxs)) / np.std(lummaxs)), 2)
 print(db)
 print(f"Create stats.json")
-with open(f"{path}/stats.json", "w") as f:
+with open(f"{path}/dbstats.json", "w") as f:
     f.write(json.dumps(db, indent=4))
 
 

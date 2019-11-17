@@ -32,7 +32,11 @@ for lot in lots:
             dico["x"] = int(m.groups()[0])
             dico["y"] = int(m.groups()[1])
             dico["lum"] = -1
+            dico["lummin"] = -1
+            dico["lummax"] = -1
             dico["std"] = -1
+            dico["sato"] = -1
+            dico["harris"] = -1
             with open(dico["path"], "rb") as f:
                 b = f.read()
                 h = hashlib.blake2b(b)

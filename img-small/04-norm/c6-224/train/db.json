@@ -4,10 +4,10 @@
     "path": "img-small/04-norm/c6-224/train",
     "mode": "L",
     "format": "BMP",
-    "lum": 124.33,
-    "std": 57.86,
-    "lummin": 0.0,
-    "lummax": 255.0,
+    "lum": 141.13,
+    "std": 11.59,
+    "lummin": 95.12,
+    "lummax": 203.19,
     "count": 21,
     "dies": [
         {
@@ -18,12 +18,11 @@
             "path": "img-small/04-norm/c6-224/train/die0-OSD185236-Brutes-01-01-norm-c6-224.bmp",
             "x": 1,
             "y": 1,
-            "lum": 123.2,
-            "std": 54.23,
+            "lum": 140.87,
+            "std": 10.85,
             "h": "HbLIgWeWxPHBn8WkqkzWcWT4Osl8iPmkipTRD1WYWNqh8hHJX7Zpidqb3gzufZrd650034v1JapCMJrZ5pbKUA==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 55
+            "lummin": 104,
+            "lummax": 208
         },
         {
             "id": 1,
@@ -33,12 +32,11 @@
             "path": "img-small/04-norm/c6-224/train/die1-OSD185236-Brutes-01-02-norm-c6-224.bmp",
             "x": 1,
             "y": 2,
-            "lum": 125.21,
-            "std": 55.94,
+            "lum": 142.99,
+            "std": 10.51,
             "h": "Dc9xEvX+U9GAgOZA4hwqMN41WU2XQb1MNjSasWRdQ+9E4HLcu8iipwufyyM1QdAC3gYMSxNBcPiinKn8j/27jw==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 2
+            "lummin": 100,
+            "lummax": 197
         },
         {
             "id": 2,
@@ -48,12 +46,11 @@
             "path": "img-small/04-norm/c6-224/train/die2-OSD185236-Brutes-01-03-norm-c6-224.bmp",
             "x": 1,
             "y": 3,
-            "lum": 123.98,
-            "std": 55.1,
+            "lum": 142.81,
+            "std": 10.39,
             "h": "xw/FqCrVU0DHwBvuSqKthiHIXo4Au/lGoJjM3Uve87Y6my9BiThcibDzcu0YGi9J2ryVbcUTd++Sbj9QG6RWrQ==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 8
+            "lummin": 97,
+            "lummax": 198
         },
         {
             "id": 3,
@@ -63,12 +60,11 @@
             "path": "img-small/04-norm/c6-224/train/die3-OSD185236-Brutes-01-04-norm-c6-224.bmp",
             "x": 1,
             "y": 4,
-            "lum": 124.6,
-            "std": 53.6,
+            "lum": 142.4,
+            "std": 10.89,
             "h": "4RgB0B3UY6uJqOboX1teEZuOpTCEQ9Rt0JVjm7lz53xbbWnaZSanIvyugCbhkNkzrHaVp3o2XPgn1I/KofxoZg==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 12
+            "lummin": 106,
+            "lummax": 206
         },
         {
             "id": 4,
@@ -78,12 +74,11 @@
             "path": "img-small/04-norm/c6-224/train/die4-OSD185236-Brutes-01-05-norm-c6-224.bmp",
             "x": 1,
             "y": 5,
-            "lum": 122.55,
-            "std": 61.56,
+            "lum": 117.52,
+            "std": 12.03,
             "h": "u+jpXC8eicoWw7SVAy0IMVy2loWEWuEOkULQqpFSwb4VGTEzf7+X8Kw2yy2JilW68L8oZk/7ZN31dqda6IjNoQ==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 2153
+            "lummin": 76,
+            "lummax": 180
         },
         {
             "id": 6,
@@ -93,12 +88,11 @@
             "path": "img-small/04-norm/c6-224/train/die6-OSD185236-Brutes-01-07-norm-c6-224.bmp",
             "x": 1,
             "y": 7,
-            "lum": 122.66,
-            "std": 52.98,
+            "lum": 153.59,
+            "std": 9.77,
             "h": "hWYVlpzkawn5zySxn/ZoD4TVGQfcXeTkgfHuI7wjHUAbXPXNhE5p841tAn0PUg52fIhLu+USyUSaKmPBPUABzQ==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 711
+            "lummin": 120,
+            "lummax": 209
         },
         {
             "id": 7,
@@ -108,12 +102,11 @@
             "path": "img-small/04-norm/c6-224/train/die7-OSD185236-Brutes-01-08-norm-c6-224.bmp",
             "x": 1,
             "y": 8,
-            "lum": 123.69,
-            "std": 52.94,
+            "lum": 152.85,
+            "std": 10.09,
             "h": "rvupWUibj5tpi0DtCYZKOYtkOhuOMFt/mEU2MLOWaDPa+mIRkVWHmGOQiQc2UdG3jOfKpwBkDlttYRH8GNBMrA==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 620
+            "lummin": 117,
+            "lummax": 215
         },
         {
             "id": 8,
@@ -123,12 +116,11 @@
             "path": "img-small/04-norm/c6-224/train/die8-OSD185236-Brutes-01-09-norm-c6-224.bmp",
             "x": 1,
             "y": 9,
-            "lum": 125.73,
-            "std": 53.53,
+            "lum": 149.37,
+            "std": 10.18,
             "h": "2XHybqB9efUxDe+RAdsJhEKw3JlGC17gTF7V0nHy61SSK6NPYBdGeICMMAqjYJwYA+f/DvMLUdbV5c98i32ppQ==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 1771
+            "lummin": 115,
+            "lummax": 211
         },
         {
             "id": 10,
@@ -138,12 +130,11 @@
             "path": "img-small/04-norm/c6-224/train/die10-OSD185236-Brutes-01-11-norm-c6-224.bmp",
             "x": 1,
             "y": 11,
-            "lum": 125.31,
-            "std": 72.8,
+            "lum": 115.63,
+            "std": 14.82,
             "h": "JsQgjESs25wXw6twzEC4Igz5x2+NKxzJD2znDCshq4WcYjui6bsjQ6Y1HctizBlJaWzMoGYaEE4yiZ/IMNX/Wg==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 3296
+            "lummin": 70,
+            "lummax": 176
         },
         {
             "id": 12,
@@ -153,12 +144,11 @@
             "path": "img-small/04-norm/c6-224/train/die12-OSD185236-Brutes-01-13-norm-c6-224.bmp",
             "x": 1,
             "y": 13,
-            "lum": 126.2,
-            "std": 53.53,
+            "lum": 152.43,
+            "std": 10.13,
             "h": "fGrNlA0tZpYJwihWCzZch2Ec578rHJPbxo0OVRAnUCLGpPkE+IxjRZUpf6Eb2AVf9kj+/GNOxVEQyG+/FKMTAw==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 1584
+            "lummin": 114,
+            "lummax": 211
         },
         {
             "id": 13,
@@ -168,12 +158,11 @@
             "path": "img-small/04-norm/c6-224/train/die13-OSD185236-Brutes-01-14-norm-c6-224.bmp",
             "x": 1,
             "y": 14,
-            "lum": 122.23,
-            "std": 55.01,
+            "lum": 151.64,
+            "std": 10.6,
             "h": "c48VNt3TEgsIWN7h6vLh/cp2vvZURprmucoAk2MB6a76pFmwBEnMO6nUXya2AkD/SWzjtdOwVaSfrOBH+zVl1w==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 1538
+            "lummin": 109,
+            "lummax": 219
         },
         {
             "id": 14,
@@ -183,12 +172,11 @@
             "path": "img-small/04-norm/c6-224/train/die14-OSD185236-Brutes-01-15-norm-c6-224.bmp",
             "x": 1,
             "y": 15,
-            "lum": 124.34,
-            "std": 53.76,
+            "lum": 149.12,
+            "std": 10.2,
             "h": "w+9exHAjfPG1/hOKFro4zgY2Ld8iJx31Ip4CfoPU+3buK9BlW0KH/VoVj0mXnO1YRYjDmGedcl+476/iAmwGUQ==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 1411
+            "lummin": 114,
+            "lummax": 212
         },
         {
             "id": 15,
@@ -198,12 +186,11 @@
             "path": "img-small/04-norm/c6-224/train/die15-OSD185236-Brutes-01-16-norm-c6-224.bmp",
             "x": 1,
             "y": 16,
-            "lum": 126.29,
-            "std": 71.73,
+            "lum": 132.14,
+            "std": 14.91,
             "h": "uda2M56lCXlMhgUQ+elhf2j3EbQFARDjabehvbvPCcwb3H88glCTqk1qmNjxbkQvLR88J2kItTpi7jxXoUhsbg==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 2983
+            "lummin": 85,
+            "lummax": 205
         },
         {
             "id": 16,
@@ -213,12 +200,11 @@
             "path": "img-small/04-norm/c6-224/train/die16-OSD185236-Brutes-01-17-norm-c6-224.bmp",
             "x": 1,
             "y": 17,
-            "lum": 124.5,
-            "std": 67.01,
+            "lum": 126.74,
+            "std": 13.38,
             "h": "KjQUyItj+HNN6ydFPmKf14sNevx2dcM9veKnGGpIn1DP/39d6y/aedLiO//yGXWRCYDheUX2bvV3/+W5M6XiAA==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 2159
+            "lummin": 81,
+            "lummax": 187
         },
         {
             "id": 17,
@@ -228,12 +214,11 @@
             "path": "img-small/04-norm/c6-224/train/die17-OSD185236-Brutes-01-18-norm-c6-224.bmp",
             "x": 1,
             "y": 18,
-            "lum": 124.73,
-            "std": 51.44,
+            "lum": 146.08,
+            "std": 9.43,
             "h": "5shiVJzDYxqoGMaW2ZMbRydgJJMOUmHGLL2wMMuhQStxv19qZqy7Rg1Hz5erah1yAPQ0J1R+6JkFlPXcsC4dLA==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 75
+            "lummin": 111,
+            "lummax": 198
         },
         {
             "id": 18,
@@ -243,12 +228,11 @@
             "path": "img-small/04-norm/c6-224/train/die18-OSD185236-Brutes-01-19-norm-c6-224.bmp",
             "x": 1,
             "y": 19,
-            "lum": 123.02,
-            "std": 51.14,
+            "lum": 149.64,
+            "std": 9.45,
             "h": "bYOH8mnWtbbvXsFgdze/wWhQMIzbOzrLCncUopkiFFVbIKYdmTPLnYupyizdV3oBPBYN4ak2E3d/Drqp1yzH7g==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 130
+            "lummin": 116,
+            "lummax": 205
         },
         {
             "id": 20,
@@ -258,12 +242,11 @@
             "path": "img-small/04-norm/c6-224/train/die20-OSD185236-Brutes-01-21-norm-c6-224.bmp",
             "x": 1,
             "y": 21,
-            "lum": 126.34,
-            "std": 52.98,
+            "lum": 145.41,
+            "std": 10.04,
             "h": "vzkLEE2Nfb15xruf3868NyXlESbTCLqghe9FTcy7AcPk68be4ltyCka3QeI7He7BQGMG3mBPx9412NMxWe8//Q==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 306
+            "lummin": 108,
+            "lummax": 206
         },
         {
             "id": 22,
@@ -273,12 +256,11 @@
             "path": "img-small/04-norm/c6-224/train/die22-OSD185236-Brutes-01-23-norm-c6-224.bmp",
             "x": 1,
             "y": 23,
-            "lum": 124.13,
-            "std": 59.41,
+            "lum": 142.18,
+            "std": 11.96,
             "h": "8YuqlDvxXvaaGlbLp00CkeuXz2MBv9VaEtDBdT3+MxUjjjxPuuJKr+8juQTkaDdS8lcb4RNjBFB4jWZiST+cDg==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 2401
+            "lummin": 100,
+            "lummax": 204
         },
         {
             "id": 23,
@@ -288,12 +270,11 @@
             "path": "img-small/04-norm/c6-224/train/die23-OSD185236-Brutes-01-24-norm-c6-224.bmp",
             "x": 1,
             "y": 24,
-            "lum": 124.17,
-            "std": 64.13,
+            "lum": 141.78,
+            "std": 12.53,
             "h": "Vw5EEEa8gFtfWRoeU2UL3p2zc05kgoNydhQXxl8yiAmN/TAFoz5nD94wTZSDk1OVWnthcde7yrmxxZtjXxaFlA==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 2621
+            "lummin": 100,
+            "lummax": 205
         },
         {
             "id": 24,
@@ -303,12 +284,11 @@
             "path": "img-small/04-norm/c6-224/train/die24-OSD185236-Brutes-01-25-norm-c6-224.bmp",
             "x": 1,
             "y": 25,
-            "lum": 125.62,
-            "std": 63.17,
+            "lum": 139.28,
+            "std": 12.45,
             "h": "QfgxEo2pxnWMh0l0wfQ9r2h9BpJqyXqD19ly8EL/MAt/U4Yax6ZiFTxjNtOwphATyBQpCmaT7Nl+tG/7UnST6g==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 2740
+            "lummin": 97,
+            "lummax": 207
         },
         {
             "id": 25,
@@ -318,13 +298,11 @@
             "path": "img-small/04-norm/c6-224/train/die25-OSD185236-Brutes-01-26-norm-c6-224.bmp",
             "x": 1,
             "y": 26,
-            "lum": 122.4,
-            "std": 59.11,
+            "lum": 138.76,
+            "std": 11.54,
             "h": "JXnHeSwlAgB3X/v0VS0ZlF4gtklYn6DrEdF47z+uBEKEknRuEVxb+Lib8oAocgjviTV80SlvpGVOIw58kJpQwQ==",
-            "lummin": 0,
-            "lummax": 255,
-            "zpc40": 1741
+            "lummin": 101,
+            "lummax": 205
         }
-    ],
-    "zpc40": 1348
+    ]
 }
